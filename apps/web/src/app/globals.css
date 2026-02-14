@@ -1,0 +1,102 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #0a0a0b;
+  --surface: #141416;
+  --surface-hover: #1e1e21;
+  --ink: #e8e8e8;
+  --muted: #7a7a7e;
+  --accent: #5e6ad2;
+  --accent-hover: #7c85e0;
+  --stroke: rgba(255, 255, 255, 0.08);
+  --stroke-strong: rgba(255, 255, 255, 0.15);
+  --success: #4ade80;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-inter);
+  min-height: 100vh;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.font-display {
+  font-family: var(--font-inter);
+  letter-spacing: -0.02em;
+  font-weight: 600;
+}
+
+.surface {
+  background: var(--surface);
+  border: 1px solid var(--stroke);
+}
+
+.text-muted {
+  color: var(--muted);
+}
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  border: 1px solid var(--stroke-strong);
+  background: var(--surface);
+  font-size: 0.6875rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.375rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+}
+
+.accent-badge {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: #ffffff;
+}
+
+.status-dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.status-dot-live {
+  background: var(--success);
+}
+
+.status-dot-paused {
+  background: var(--warning);
+}
+
+.status-dot-danger {
+  background: var(--danger);
+}
+
+.font-mono-data {
+  font-variant-numeric: tabular-nums;
+}
+
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-slide-in {
+  animation: slide-in 0.2s ease-out;
+}

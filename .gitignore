@@ -1,0 +1,41 @@
+# Dependencies
+node_modules/
+
+# Hardhat / Solidity
+contracts/artifacts/
+contracts/cache/
+contracts/typechain-types/
+
+# Laravel
+apps/api/vendor/
+apps/api/database/database.sqlite
+
+# Next.js
+apps/web/.next/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Claude
+.claude/
+
+# Playwright MCP
+.playwright-mcp/
+
+# Laravel (additional)
+apps/api/storage/framework/
+apps/api/storage/logs/
+apps/api/bootstrap/cache/
+apps/api/.phpunit.result.cache
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
