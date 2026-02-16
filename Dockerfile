@@ -23,7 +23,7 @@ RUN npm install --production
 COPY contracts/scripts/chain.mjs /chain/scripts/chain.mjs
 
 # Stage 3: Production runtime
-FROM php:8.2-fpm-alpine AS runtime
+FROM php:8.4-fpm-alpine AS runtime
 
 RUN apk add --no-cache \
     nginx \
