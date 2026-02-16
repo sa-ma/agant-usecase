@@ -14,6 +14,16 @@ const config: HardhatUserConfig = {
       url: process.env.CHAIN_RPC_URL || "http://127.0.0.1:8545",
       chainId: 31337,
     },
+    baseSepolia: {
+      url: process.env.BASE_SEPOLIA_RPC_URL || "",
+      chainId: 84532,
+      accounts: process.env.DEPLOYER_PRIVATE_KEY
+        ? [process.env.DEPLOYER_PRIVATE_KEY]
+        : [],
+    },
+  },
+  etherscan: {
+    apiKey: process.env.BASESCAN_API_KEY || "",
   },
 };
 

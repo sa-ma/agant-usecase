@@ -1,0 +1,53 @@
+services:
+  - type: web
+    name: gbp-stablecoin-api
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    plan: free
+    healthCheckPath: /up
+    envVars:
+      - key: APP_NAME
+        value: "GBP Stablecoin API"
+      - key: APP_ENV
+        value: production
+      - key: APP_DEBUG
+        value: "false"
+      - key: APP_KEY
+        sync: false
+      - key: APP_URL
+        sync: false
+      - key: DB_CONNECTION
+        value: pgsql
+      - key: DB_URL
+        fromDatabase:
+          name: gbp-stablecoin-db
+          property: connectionString
+      - key: CHAIN_SCRIPT_PATH
+        value: /chain/scripts/chain.mjs
+      - key: CHAIN_RPC_URL
+        sync: false
+      - key: CHAIN_PRIVATE_KEY
+        sync: false
+      - key: CHAIN_CONTRACT_ADDRESS
+        sync: false
+      - key: CORS_ORIGIN
+        sync: false
+      - key: SEED_ADMIN_TOKEN
+        sync: false
+      - key: SESSION_DRIVER
+        value: database
+      - key: CACHE_STORE
+        value: database
+      - key: QUEUE_CONNECTION
+        value: sync
+      - key: LOG_CHANNEL
+        value: stderr
+      - key: LOG_LEVEL
+        value: warning
+
+databases:
+  - name: gbp-stablecoin-db
+    databaseName: gbp_stablecoin
+    user: gbp_admin
+    plan: free

@@ -7,7 +7,8 @@
     "compile": "hardhat compile",
     "test": "hardhat test",
     "node": "hardhat node",
-    "deploy": "hardhat run scripts/deploy.ts --network localhost"
+    "deploy": "hardhat run scripts/deploy.ts --network localhost",
+    "deploy:baseSepolia": "hardhat run scripts/deploy.ts --network baseSepolia"
   },
   "keywords": [],
   "author": "",

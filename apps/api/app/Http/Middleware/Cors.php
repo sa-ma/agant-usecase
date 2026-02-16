@@ -13,7 +13,7 @@ class Cors
      */
     public function handle(Request $request, Closure $next): Response
     {
-        $origin = env('CORS_ORIGIN', 'http://localhost:3000');
+        $origin = config('app.cors_origin');
         $headers = [
             'Access-Control-Allow-Origin' => $origin,
             'Access-Control-Allow-Methods' => 'GET,POST,PUT,PATCH,DELETE,OPTIONS',

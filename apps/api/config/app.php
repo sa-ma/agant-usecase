@@ -118,6 +118,8 @@ return [
     |
     */
 
+    'cors_origin' => env('CORS_ORIGIN', 'http://localhost:3000'),
+
     'maintenance' => [
         'driver' => env('APP_MAINTENANCE_DRIVER', 'file'),
         'store' => env('APP_MAINTENANCE_STORE', 'database'),
